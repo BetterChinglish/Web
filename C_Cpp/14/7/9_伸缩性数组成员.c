@@ -8,6 +8,7 @@
 // struct flex
 // {
 //     int count;
+
 //     double average;
 //     double scores [];//伸缩型数组成员
 
@@ -26,6 +27,7 @@
 
 int main(void)
 {
+    int a;
     
 
 
