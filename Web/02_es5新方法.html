@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+
+
+    <script>
+
+        //更改属性值
+        var person1 = {
+            firstName : "bill",
+            lastName : "gates",
+            language : "EN"
+
+        }
+        document.getElementById("demo1").innerHTML = person1.language;
+        
+        Object.defineProperty(person1,"language",{value:"ZH",writable:false});
+
+        document.getElementById("demo2").innerHTML = person1.language;
+
+        //更改元数据
+        // writable : true      // 属性值可修改
+        // enumerable : true    // 属性可枚举
+        // configurable : true  // 属性可重新配置
+        // writable : false     // 属性值不可修改
+        // enumerable : false   // 属性不可枚举
+        // configurable : false // 属性不可重新配置
+
+        //更改使其language属性为只读
+        Object.defineProperty(person1,"language",{writable:false});
+        person1.language = "en";
+        document.getElementById("demo3").innerHTML = person1.language;
+        
+
+
+        //列举属性
+        Object.defineProperty(person1,"firstName",{enumerable:false});
+        // 1、列出所有属性
+        document.getElementById("demo4").innerHTML = 
+        Object.getOwnPropertyNames(person1);
+        // 2、列出可枚举属性
+        document.getElementById("demo5").innerHTML= Object.keys(person1);
+
+
+        //添加新属性
+        Object.defineProperty(person1,"homeland",{value:"jiangxi"});
+        document.getElementById("demo6").innerHTML = person1.homeland;
+        
+
+        //添加getter和setter
+        Object.defineProperty(person1,"fullName",{
+            get : function() {
+                return this.firstName + " " + this.lastName;
+            }
+        })
+        document.getElementById("demo8").innerHTML = person1.fullName;
+
+        //计数器实例
+        var countor = {
+            counter: 0
+        }
+        Object.defineProperty(countor,"reset",{
+            get : function() {
+                this.counter = 0;
+            }
+        })
+        Object.defineProperty(countor,"inc",{
+            get : function() {
+                this.counter++;
+            }
+        })
+        Object.defineProperty(counter,"dec",{
+            get : function() {
+                this.counter--;
+            }
+        })
+        Object.defineProperty(countor,"add",{
+            get : function(value) {
+                this.counter -= value;
+            }
+        })
+        Object.defineProperty(countor,"sub",{
+            get : function(value) {
+                this.counter -= value;
+            }
+        })
+
+
+
+        //补充
+        //设置某属性为只读后，利用Object.defineProperty(obj,property,{value:changeValue})仍可更改language的属性值
+        //课认为是这个的权限高于writable：false
+        //使某属性值完全不可更改，使用Object.freeze(obj)
+        
+    </script>
+</body>
+</html>
