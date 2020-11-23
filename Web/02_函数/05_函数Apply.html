@@ -7,5 +7,57 @@
 </head>
 <body>
     
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+
+        // Apply
+        // 通过 apply() 方法，您能够编写用于不同对象的方法。
+
+        // apply()方法
+        // 与call()方法非常相似
+        var person = {
+            fullName : function(city, country) {
+                return this.firstName + " " + 
+                this.lastName + " " + 
+                city + " " + 
+                country;
+                
+            }
+        }
+        var person1 = {
+            firstName : "Bill",
+            lastName : "Gates"
+        }
+        document.getElementById("demo1").innerHTML = 
+        person.fullName.apply(person1,["Oslo", "Norway"]);
+
+        // 应用
+        // 以 Math.max() 方法为例
+        document.getElementById("demo2").innerHTML = 
+        Math.max(1,33,99);
+        // js数组没有max()方法，故可以使用apply调用Math.max()方法
+        document.getElementById("demo3").innerHTML = 
+        Math.max.apply(null,[1,33,99]);
+        // 第一个参数 null 无关紧要，将null换成如下的也可以
+        // Math
+        // " "
+        // 0
+
+        // 注意：
+        // 在 JavaScript 严格模式下，
+        // 如果 apply() 方法的第一个参数不是对象，
+        // 则它将成为被调用函数的所有者（对象）。
+        // 在“非严格”模式下，它成为全局对象。
+
+
+
+
+    </script>
+
+
 </body>
 </html>
