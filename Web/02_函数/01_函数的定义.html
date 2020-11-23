@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>qsj</title>
 </head>
 <body>
 
@@ -11,7 +11,10 @@
     <p id="demo2"></p>
     <p id="demo3"></p> 
     <p id="demo4"></p>
-
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
 
     <script>
         //函数声明
@@ -31,14 +34,49 @@
         document.getElementById("demo1").innerHTML = y;
         
 
-        //Function()构造器
+        // Function()函数构造器
+        // 为创建新对象
         var myFunction = new Function("a", "b", "return a * b");
         var y = myFunction(4,9);
         document.getElementById("demo3").innerHTML = y;
-        //没有必要使用函数构造器
+        // 没有必要使用函数构造器
+        // 使用匿名函数同样可以做到此效果，可以避免使用new
         var myFunction = function(a,b) {return a*b};
         var z = myFunction(4,5);
         document.getElementById("demo4").innerHTML = z;
+
+        // 提升，即将声明自动提到代码最前面，使得函数能够再声明之前被调用
+        // 注意：使用表达式定义的函数不会被提升
+
+        // 自调用函数，无法对函数声明进行自调用
+        document.getElementById("demo5").innerHTML = (function (a,b) {
+            return a * b;
+        })(9,9)
+
+        // 函数可用作值
+
+        // 函数可用在表达式中
+
+        // 函数是对象
+        // 对函数使用typeof会返回function，但是最好是把 JavaScript 函数描述为对象。
+        // js函数有 属性 和 方法
+        // arguments.length 会返回函数被调用时收到的参数数目
+        function myFunction2(a,b) {
+            return arguments.length;
+        }
+        document.getElementById("demo6").innerHTML = myFunction(6,7);
+
+        // toString() 返回函数（以字符串）
+        document.getElementById("demo7").innerHTML = myFunction2.toString();
+
+        // 为创建新对象而设计的函数，称为对象构造函数（对象构造器）
+
+        // 箭头函数
+        const m = (a,b) => {a * b};
+        document.getElementById("demo8").innerHTML = m(7,7);
+
+
+
 
 
 
