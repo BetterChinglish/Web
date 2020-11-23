@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包</title>
+</head>
+<body>
+    
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <button id="" type="button" onclick="myFunction1()"></button>
+    <p id="demo3"></p>
+
+
+
+    <script>
+        // JavaScript 变量属于本地或全局作用域。
+        // 全局变量能够通过闭包实现局部（私有）。
+
+        // 全局变量
+        // 属于window对象
+        // 全局变量能够被页面中(以及窗口中)的所有脚本使用和修改
+
+        var a = 0;
+        function myFunction(){
+            var a;
+            a = 1;
+            document.getElementById("demo1").innerHTML = a;
+        }
+        myFunction();
+        document.getElementById("demo2").innerHTML = a;
+        //可见当函数中出现与全局变量重名的局部变量时，函数中对此变量名操作，更改的是局部变量
+
+        // 全局变量活得和您的应用程序（窗口、网页）一样久。
+        // 局部变量活得不长。它们在函数调用时创建，在函数完成后被删除。
+
+        // 闭包
+
+        var add = (function () {
+            var counter = 0;
+            return function() {
+                return counter += 1;
+            }
+        })()
+
+        function myFunction1() {
+            document.getElementById("demo3").innerHTML = add();
+        }
+        // 变量 add 的赋值是自调用函数的返回值。
+        // 这个自调用函数只运行一次。它设置计数器为零（0），并返回函数表达式。
+        // 这样 add 成为了函数。最“精彩的”部分是它能够访问父作用域中的计数器。
+        // 这被称为 JavaScript 闭包。它使函数拥有“私有”变量成为可能。
+        // 计数器被这个匿名函数的作用域保护，并且只能使用 add 函数来修改。
+        // 闭包指的是有权访问父作用域的函数，即使在父函数关闭之后。
+
+
+
+    </script>
+
+
+</body>
+</html>
