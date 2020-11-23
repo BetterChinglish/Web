@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+
+        // JavaScript 函数定义不会为参数（parameter）规定数据类型。
+        // JavaScript 函数不会对所传递的参数（argument）实行类型检查。
+        // JavaScript 函数不会检查所接收参数（argument）的数量。
+
+        // 如果调用参数时省略了参数(少于被声明的数量)，
+        // 则丢失的值被设置为：undefined。
+        function myFunction1(x, y) {
+            if (y == undefined) {
+                y = 0;
+            }
+            return x * y;
+        }
+        document.getElementById("demo1").innerHTML = myFunction1(4);
+
+        // 如果函数调用的参数太多（超过声明），
+        // 则可以使用 arguments 对象来达到这些参数。
+        function myFunction2() {
+            var i;
+            var max = -Infinity;
+            for( i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        document.getElementById("demo2").innerHTML = myFunction2(4,95,86,987);
+
+        function myFunction3() {
+            var sum = 0;
+            var i;
+            for(i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        document.getElementById("demo3").innerHTML = myFunction3(4,95,86,987);
+
+        // 参数通过值传递, 而不是地址传递
+        // 对象是由引用传递的
+        
+    </script>
+</body>
+</html>
