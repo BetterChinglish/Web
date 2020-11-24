@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性</title>
+</head>
+<body>
+
+    <p id="demo1">Hello World!</p>
+    <p id="demo2">hi world!</p>
+    
+    <!-- 属性是节点（HTML 元素）的值，您能够获取或设置。 -->
+    <script>
+        // innerHTML 属性
+        // 获取元素内容的最简单方法是使用 innerHTML 属性。
+        // innerHTML 属性对于获取或替换 HTML 元素的内容很有用。
+
+        var txt = document.getElementById("demo1").innerHTML;
+        document.write(txt + "<br> ");
+        // innerHTML 属性可用于获取或改变任意 HTML 元素，
+        // 包括 <html> 和 <body>。
+
+        // nodeName属性
+        // nodeName 属性规定节点的名称
+        /*
+        nodeName 是只读的
+        元素节点的 nodeName 与标签名相同
+        属性节点的 nodeName 与属性名相同
+        文本节点的 nodeName 始终是 #text
+        文档节点的 nodeName 始终是 #document 
+        */
+        // 注释：nodeName 始终包含 HTML 元素的大写字母标签名。
+        document.write(document.getElementById("demo1").nodeName + "<br>");
+
+        // nodeValue属性 
+        // nodeValue属性规定节点的值
+        /*
+        元素节点的 nodeValue 是 undefined 或 null
+        文本节点的 nodeValue 是文本本身
+        属性节点的 nodeValue 是属性值
+        */   
+        x = document.getElementById("demo2");
+        document.write(x.nodeValue + "<br>");
+        document.write(x.firstChild.nodeValue + "<br>");
+
+        // nodeType属性
+        // 返回节点类型，只读
+        document.write(x.nodeType + "<br>");
+        document.write(x.firstChild.nodeType + "<br>");
+        // 类型     nodeType的值
+        // 元素	         1
+        // 属性	         2
+        // 文本	         3
+        // 注释	         8
+        // 文档	         9
+
+    </script>
+</body>
+</html>

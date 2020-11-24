@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问</title>
+</head>
+<body>
+
+    <!--访问 HTML DOM - 查找 HTML 元素 
+        访问 HTML 元素等同于访问节点
+    -->
+
+
+    <!-- 您能够以不同的方式来访问 HTML 元素：
+    通过使用 getElementById() 方法
+    通过使用 getElementsByTagName() 方法
+    通过使用 getElementsByClassName() 方法 
+    -->
+
+    <!-- getElementById 省略 -->
+
+    <!-- getElementsByTagName() 方法 -->
+    <p id="id1" class="class1"> i </p>
+    <p id="id2" class="class2"> am </p>
+    <p id="id3" class="class3"> your father</p>
+    <script>
+        x = document.getElementsByTagName("p");
+        document.write("第一段文字为：" + x[0].innerHTML + "<br>");
+        document.write("第三段文字为：" + x[2].innerHTML + "<br>");
+    </script>
+
+    <p>Hello World!</p>
+    <div id="demo1">
+        <p>dom</p>
+        <p>is useful</p>
+    </div>
+    <script>
+        x = document.getElementById("demo1").getElementsByTagName("p");
+        document.write("div中的第一段文字为：" + x[0].innerHTML);
+    </script>
+
+</body>
+</html>

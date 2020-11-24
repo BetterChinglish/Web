@@ -19,7 +19,48 @@
         属性是您能够获取或设置的值（比如节点的名称或内容）。
      -->
 
-
+    <p id="intro">Hello World!</p>
+    <p>本例演示 <b>getElementById</b> 方法！</p>
      
+    <script>
+    
+        // getElementById()方法，返回带有指定id的元素
+        x=document.getElementById("intro");
+        document.write("<p>来自 intro 段落的文本：" + x.innerHTML + "</p>");
+
+        
+
+
+
+    </script>
+
+
+    <!-- HTML DOM 对象 - 方法和属性
+        
+        一些常用的 HTML DOM 方法：
+        getElementById(id) - 获取带有指定 id 的节点（元素）
+        appendChild(node) - 插入新的子节点（元素）
+        removeChild(node) - 删除子节点（元素）
+        
+        一些常用的 HTML DOM 属性：
+        innerHTML - 节点（元素）的文本值
+        parentNode - 节点（元素）的父节点
+        childNodes - 节点（元素）的子节点
+        attributes - 节点（元素）的属性节点
+     -->
+
+    <!-- 现实生活中的对象
+    某个人是一个对象。
+    
+    人的方法可能是 eat(), sleep(), work(), play() 等等。
+    
+    所有人都有这些方法，但会在不同时间执行它们。
+    
+    一个人的属性包括姓名、身高、体重、年龄、性别等等。
+    
+    所有人都有这些属性，但它们的值因人而异。 
+    -->
+
+    
 </body>
 </html>
