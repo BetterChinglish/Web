@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 通过 HTML DOM，您能够使用节点关系在节点树中导航。 -->
+
+    <!-- HTML DOM 节点列表
+    getElementsByTagName() 方法返回节点列表。
+    节点列表是一个节点数组。 -->
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+        var x = document.getElementsByTagName("p");
+        document.write("第2个p为：" + x[1].innerHTML + "<br />");
+
+        //  HTML DOM 节点列表长度
+        // 可以使用length属性来循环节点列表
+        for (var i = 0; i < x.length; i++)
+        {
+            document.write(
+                "第 " + i + " 个p的值为：" + 
+                x[i].innerHTML + 
+                "<br />");
+
+        }
+    </script>
+
+    <!-- 
+        导航节点关系
+        您能够使用三个节点属性：
+        parentNode、
+        firstChild、 
+        lastChild ，在文档结构中进行导航。
+
+        firstChild 属性可用于访问元素的文本：
+     -->
+    <p id="intro">Hello World!</p>
+    <script>
+        x = document.getElementById("intro");
+        document.write(x.firstChild.nodeValue + "<br />");
+    </script>
+
+    <!-- DOM 根节点 
+    这里有两个特殊的属性，可以访问全部文档：
+        document.documentElement    - 全部文档
+        document.body               - 文档的主体-->
+    <!-- <script>
+        alert(document.body.innerHTML);
+    </script> -->
+
+    <!-- childNodes 和 nodeValue
+        除了 innerHTML 属性，
+        也可以使用 childNodes 和 nodeValue 属性来获取元素的内容。
+    -->
+    <script>
+        var txt = document.getElementById("intro").childNodes[0].nodeValue;
+        document.write(txt + "<br />")
+        // 在上面的例子中，
+        // getElementById 是一个方法，
+        // 而 childNodes 和 nodeValue 是属性。
+    </script>
+</body>
+</html>

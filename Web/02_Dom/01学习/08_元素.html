@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素</title>
+</head>
+<body>
+    <!-- 创建新的HTML元素 - appendChild() -->
+    <!-- 必须先创建改元素，然后再追加到已有元素上(后) -->
+    <div id="div1" style="background-color:aqua;">
+        <p id="p1">first p</p>
+        <p id="p2">second p</p>
+    </div>
+    <input type="button" value="添加一个p元素" onclick="addOnePLast()">
+
+    <script>
+        function addOnePLast() {
+            var para = document.createElement("p");
+            var node = document.createTextNode("the new p");
+            para.appendChild(node);
+
+            document.getElementById("div1").appendChild(para);
+        }
+    </script>
+
+    <!-- appendChild()
+        将新元素作为父元素的最后一个子元素进行添加    
+    -->
+    <!-- insertBefore()
+        添加到父元素的某个子元素之前
+    -->
+    <div id="div2" style="background-color: skyblue;">
+        <p id="p3">one</p>
+        <p id="p4">two</p>
+    </div>
+
+    <input type="button" value="点击添加一个p元素" onclick="addOnePBefore()">
+    <script>
+        function addOnePBefore() {
+            var para = document.createElement("p");
+            var node = document.createTextNode("the new p");
+            para.appendChild(node);
+            var child = document.getElementById("p3");
+            document.getElementById("div2").insertBefore(para, child);
+            var node = document.createTextNode("the new p, too");
+            var para1 = document.createElement("p");
+            para1.appendChild(node);
+            document.getElementById("div2").insertBefore(para1, child);
+            
+        }
+    </script>
+
+
+    <!-- 删除已有的HTML元素 
+        如需删除 HTML 元素，您必须清楚该元素的父元素
+    -->
+    <div id="div3" style="background-color: aquamarine;">
+        <p id="p5"> ONE </p>
+        <p id="p6"> TWO</p>
+    </div>
+    <script>
+        // var parent = document.getElementById("div3");
+        // var child1 = document.getElementById("p5");
+        // parent.removeChild(child1);
+
+        // 不知道父节点可以使用 child.parentNode 查找到父节点
+        var child1 = document.getElementById("p5");
+        child1.parentNode.removeChild(child1);
+        // 可以达到一样的效果
+        
+    </script>
+
+
+    <!-- 替换HTML元素
+        使用replaceChild() 方法
+
+    -->
+    <div id="div4" style="background-color: bisque;">
+
+        <p id="id7">FIRST</p>
+        <p id="id8">SECOND</p>
+
+    </div>
+
+    <script>
+
+        var para2 = document.createElement("p");
+        var node = document.createTextNode("first");
+        para2.appendChild(node);
+
+        var parent1 = document.getElementById("div4");
+        var child2 = document.getElementById("id7");
+        parent1.replaceChild(para2, child2);
+    </script>
+
+
+</body>
+</html>

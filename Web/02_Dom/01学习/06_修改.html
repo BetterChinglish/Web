@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改</title>
+</head>
+<body>
+    
+    <!-- 修改HTML元素 -->
+    <!-- 
+        修改 HTML DOM 意味着许多不同的方面：
+
+        改变 HTML 内容
+        改变 CSS 样式
+        改变 HTML 属性
+        创建新的 HTML 元素
+        删除已有的 HTML 元素
+        改变事件（处理程序）
+     -->
+
+
+
+     <!-- 创建HTML内容
+        
+        最简单的方法是使用 innerHTML 属性
+    -->
+    <P id="demo1">hello world!</P>
+    <button type="button" onclick="changeTxt()">点击更改上述文字</button>
+
+    <script>
+        function changeTxt() {
+            document.getElementById("demo1").innerHTML = "changed";
+        }
+    </script>
+
+
+
+    <!-- 改变 HTML 样式 -->
+    <p id="demo2"> hello world! </p>
+    <button type="button" onclick="changeColor()">点击改变上述文字颜色</button>
+    <script>
+        function changeColor() {
+            document.getElementById("demo2").style.color = "skyblue";
+        }
+    </script>
+
+
+
+    <!-- 创建新的 HTML 元素
+        如需向 HTML DOM 添加新元素，
+        您首先必须创建该元素（元素节点），
+        然后把它追加到已有的元素上。
+    -->
+    <div id="div1">
+
+        <p id="p1">first p</p>
+        <p id="p2">second p</p>
+
+    </div>
+    <button type="button" onclick="addHTML()">点击添加一个p标签</button>
+
+
+    
+    
+    
+    <script>
+        function addHTML(){
+        var para = document.createElement("p");
+        var node = document.createTextNode("a new p");
+        para.appendChild(node);
+        var element1 = document.getElementById("div1");
+        element1.appendChild(para);
+        }
+
+    </script>
+
+</body>
+</html>

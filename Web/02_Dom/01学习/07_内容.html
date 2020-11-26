@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内容</title>
+</head>
+<body>
+
+    <!-- 改变HTML内容 
+        使用innerHTML 属性更改元素内容
+    -->
+
+    <p id="p1">hello world</p>
+    <script>
+        document.getElementById("p1").innerHTML = "changed";
+    </script>
+
+    <!-- 改变HTML样式 -->
+    <p id="p2"> hello world</p>
+    <script>
+        document.getElementById("p2").style.color="skyblue";
+    </script>
+
+    <!-- 使用事件
+        DOM允许在事件发生时执行代码
+        如：
+            在元素上点击
+            加载页面
+            改变输入字段
+        下例按钮被点击时改变body的背景色
+
+    -->
+    <input type="button" onclick="document.body.style.backgroundColor='yellow';" value="Change background color">
+
+</body>
+</html>

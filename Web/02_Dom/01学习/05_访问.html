@@ -25,9 +25,9 @@
     <p id="id2" class="class2"> am </p>
     <p id="id3" class="class3"> your father</p>
     <script>
-        x = document.getElementsByTagName("p");
-        document.write("第一段文字为：" + x[0].innerHTML + "<br>");
-        document.write("第三段文字为：" + x[2].innerHTML + "<br>");
+        x0 = document.getElementsByTagName("p");
+        document.write("第一段文字为：" + x0[0].innerHTML + "<br>");
+        document.write("第三段文字为：" + x0[2].innerHTML + "<br>");
     </script>
 
     <p>Hello World!</p>
@@ -36,9 +36,20 @@
         <p>is useful</p>
     </div>
     <script>
-        x = document.getElementById("demo1").getElementsByTagName("p");
-        document.write("div中的第一段文字为：" + x[0].innerHTML);
+        x1 = document.getElementById("demo1").getElementsByTagName("p");
+        document.write("div中的第一段文字为：" + x1[0].innerHTML);
     </script>
+
+    <!-- getElementsByClassName() 方法 -->
+    <p class="class4">my name is</p>
+    <p class="class4">qsj</p>
+
+    <script>
+        x2 = document.getElementsByClassName("class4");
+        document.write(x2[1].innerHTML + "<br>" + x2[2].innerHTML + "<br>");
+    </script>
+
+
 
 </body>
 </html>
