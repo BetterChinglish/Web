@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide();
+            });
+            $("#show").click(function(){
+                $("p").show();
+            });
+        });
+        // 语法:
+        // $(selector).hide(speed,callback);
+        // $(selector).show(speed,callback);
+        // speed 规定显示隐藏的速度，可取 slow，fast或毫秒
+        // callback 是隐藏或显示完成后执行的函数的名称
+    </script>
+</head>
+<body>
+    <p>this is a p</p>
+    <p>this is a p, too</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+
+</body>
+</html>

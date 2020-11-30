@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function(){
+            jQuery("#button1").click(function(){
+                jQuery("p").hide();
+            });
+            jQuery("#button2").click(function(){
+                jQuery("h1").hide();
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <!-- jQuery 名称冲突
+        jQuery 使用 $ 符号作为 jQuery 的简介方式。
+        某些其他 JavaScript 库中的函数
+        （比如 Prototype）
+        同样使用 $ 符号。
+
+        jQuery 使用名为 noConflict() 的方法来解决该问题。
+        var jq=jQuery.noConflict()，
+        帮助您使用自己的名称（比如 jq）来代替 $ 符号 -->
+    <p>this is a p</p>
+    <h1>this is a h1</h1>
+    <button id="button1">click me to hide p</button>
+    <button id="button2">click me to hide h1</button>
+
+
+</body>
+</html>
