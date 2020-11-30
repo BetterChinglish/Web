@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+        //  fadeTo() 方法允许渐变为给定的不透明度（值介于 0 与 1 之间）。
+        // 语法：
+        // $(selector).fadeTo(speed,opacity,callback);
+        // opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）。
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#div1").fadeTo("slow",0.15);
+                $("#div2").fadeTo("slow",0.35);
+                $("#div3").fadeTo("slow",0.75);
+
+            });
+        });
+        
+    </script>
+</head>
+<body>
+
+    <button>click me</button>
+
+    <br><br>
+
+    <div id="div1" 
+    style="width:80px;
+    height:80px;
+    background-color:red;">
+    </div>
+
+    <br>
+
+    <div id="div2" 
+    style="width:80px;
+    height:80px;
+    background-color:yellow;">
+    </div>
+
+    <br>
+
+    <div id="div3" 
+    style="width:80px;
+    height:80px;
+    background-color:black;">
+    </div>
+</body>
+</html>

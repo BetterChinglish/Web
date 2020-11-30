@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+        // fadeOut() 用于淡出可见元素
+        // grammer:
+        // $(selector).fadeOut(speed, callback);
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#div1").fadeOut();
+                $("#div2").fadeOut("fast");
+                $("#div3").fadeOut(3000);
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>click me</button>
+
+    <div id="div1" 
+    style="width:80px;
+    height:80px;
+    background-color:red;">
+    </div>
+    <div id="div2" 
+    style="width:80px;
+    height:80px;
+    background-color:yellow;">
+    </div>
+    <div id="div3" 
+    style="width:80px;
+    height:80px;
+    background-color:black;">
+    </div>
+</body>
+</html>

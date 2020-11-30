@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+        // 滑动方法可使元素上下滑动。
+        // 通过 jQuery，您可以在元素上创建滑动效果。
+
+        // jQuery 拥有以下滑动方法：
+        // slideDown()
+        // slideUp()
+        // slideToggle()
+        
+        // slideDown() 方法用于向下滑动元素。
+
+        // 语法：
+        // $(selector).slideDown(speed,callback);
+
+        // jquery
+        $(document).ready(function(){
+            $(".flip").click(function(){
+                $(".panel").slideDown();
+            });
+        });
+
+    </script>
+
+    <!-- css -->
+    <style type="text/css"> 
+        div.panel
+        {
+        display:none;
+        }
+        </style>
+</head>
+<body>
+    <!-- 元素 -->
+    <div class="panel">
+        <p>this is a p</p>
+        <p>i love her so much</p>
+
+    </div>
+    
+    <p class="flip">click here</p>
+
+
+</body>
+</html>
