@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+
+    <script>
+        // animate() 方法允许您创建自定义的动画。
+        
+        // 语法：
+        // $(selector).animate({params},speed,callback);
+        //  必需的 params 参数定义形成动画的 CSS 属性
+        // 可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+        // 可选的 callback 参数是动画完成后所执行的函数名称。
+
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $("div").animate({left:'250px'}, 5000);
+            });
+            $("#button2").click(function(){
+                $("div").animate({
+                    left:'250px',// 绝对值，最终改编为250px
+                    opacity:'0.5',
+                    height:'+=250px',// 相对值，在原来的基础上增加250px
+                    width:'250px'
+                }, 1000);
+            });
+            $("#button3").click(function(){
+                $("div").animate({
+                    height:'toggle'// 使用预设值toggle
+                });
+            });
+            
+            // 使用队列功能
+            // 编写多个animate()依次调用，
+            // 执行不同动画而不是同时执行
+            $("#button4").click(function(){
+                var div = $("div");
+                div.animate({height:'300px', opacity:'0.4'},"slow");
+                div.animate({width:'300px', opacity:'0.8'},"slow");
+                div.animate({height:'100px', opacity:'0.4'},"slow");
+                div.animate({width:'100px', opacity:'0.8'},"slow");
+
+            })
+        });
+
+    
+
+    </script>
+</head>
+<body>
+    <!-- 默认情况下，
+        所有 HTML 元素的位置都是静态的，并且无法移动。
+        如需对位置进行操作，
+        记得首先把元素的 CSS position 属性
+        设置为 relative、fixed 或 absolute -->
+
+    <button id="button1">操作单个属性</button>
+    
+    <!-- 操作多个属性 -->
+    <button id="button2">操作多个属性</button> 
+
+    <button id="button3">使用预设值</button>
+
+    <button id="button4">使用队列</button>
+    <div 
+    style="background:#98bf21;
+    height:100px;
+    width:100px;
+    position:absolute;"></div>
+
+
+
+</body>
+</html>
