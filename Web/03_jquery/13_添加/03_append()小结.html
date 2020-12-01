@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+
+
+        // 通过 append() 和 prepend() 方法添加若干新元素
+        // 在上面的例子中，
+        // 我们只在被选元素的开头/结尾插入文本/HTML。
+
+        // append() 和 prepend() 方法能通过参数接收无限数量的新元素。
+        // 可以通过 jQuery 来生成文本/HTML（就像上面的例子那样），
+        // 或者通过 JavaScript 代码和 DOM 元素。
+
+        // 在下面的例子中，创建若干个新元素。
+        // 这些元素可以通过 
+        // text/HTML、
+        // jQuery 或者 
+        // JavaScript/DOM 来创建。
+        // 然后我们通过 append() 方法把这些新元素追加到文本中
+        // （对 prepend() 同样有效）：
+        function appendText()
+        {
+            var txt1 = "<p>text</p>";
+            var txt2 = $("<p></p>").text("text.");
+            var txt3 = document.createElement("p");
+            txt3.innerHTML = "Text.";
+            $("body").append(txt1,txt2,txt3);
+        }
+
+
+    </script>
+</head>
+<body>
+    <p>this is a p</p>
+    <button onclick="appendText()">click to append txt</button>
+</body>
+</html>
