@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $("#p1").text("yes, this is a p");
+            });
+            $("#button2").click(function(){
+                $("#p2").html("<b>hello world</b>");
+            });
+            $("#button3").click(function(){
+                $("#value").val("李四");
+            });
+            $("#button4").click(function(){
+                $("#a1").attr("href", "https://www.baidu.com/");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="p1">this is a p</p>
+    <p id="p2">this is another p</p>
+    <p>
+        姓名：<input type="text" id="value" value="张三">
+
+    </p>
+
+    <a id="a1" href="baidu.com">在设置属性前后点击该链接</a>
+    <br>
+    <button id="button1">设置文本</button>
+    <button id="button2">设置html</button>
+    <button id="button3">设置值</button>
+    <button id="button4">设置属性</button>
+</body>
+</html>
