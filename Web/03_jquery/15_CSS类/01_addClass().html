@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $("#skyBlue").click(function(){
+                $("h1,h2").addClass("skyBlue");
+               
+            });
+            $("#bigFont").click(function(){
+                $("p,div").addClass("bigFont");
+            });
+            $("#bothOfTwo").click(function(){
+                $("h3").addClass("skyBlue bigFont");
+            });
+        });
+
+
+    </script>
+
+    <style>
+        .skyBlue {
+            color: skyblue;
+        }
+
+        .bigFont {
+            font-size: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>this is h1</h1>
+    <h2>this is h2</h2>
+    <p>this is a p</p>
+    <div>this is div</div>
+    <h3>this h3</h3>
+
+    <button id="skyBlue">turn h1 and h2 to skyblue</button>
+    <button id="bigFont">turn p and div to big fontsize</button>
+    <button id="bothOfTwo">turn h3 to skyblue and big fontsize</button>
+
+</body>
+</html>
