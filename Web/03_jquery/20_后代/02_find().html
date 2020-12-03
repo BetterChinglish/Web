@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("div").find("span").css("color","skyblue");
+                // $("div").find("*").css("color","skyblue");
+
+            })
+        })
+
+
+    </script>
+
+    <style>
+
+        div {
+            height: 500px;
+            border: 3px double black;
+        }
+
+        p {
+            text-align: center;
+        }
+
+    
+    </style>
+</head>
+<body>
+    
+    <div>
+        <p>p
+            <span>
+                span
+            </span>
+        </p>
+
+        <p>p
+            <span>
+                span 
+            </span>
+        </p>
+    </div>
+
+    
+    <button>click me</button>
+</body>
+</html>
