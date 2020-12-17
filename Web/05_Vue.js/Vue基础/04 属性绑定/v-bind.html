@@ -11,13 +11,27 @@
         <span v-bind:title="message">
             look look
         </span>
-    </div>
 
+    <!-- 对于disabled和checked之类的属性同样有效 -->
+    <button v-bind:disabled="buttonDisabled">
+        test button
+    </button>
+
+    <!-- 使用冒号代替v-bind -->
+    <input :type="inputType">   
+
+    </div>
+    
     <script>
         var app2 = new Vue({
             el:'#app-2',
             data:{
-                message:'页面加载于：' + new Date().toLocaleString()
+                message:
+                    '页面加载于：' +
+                    new Date().toLocaleString(),
+
+                buttonDisabled:'false',
+                inputType:'password'
             }
         });
     </script>

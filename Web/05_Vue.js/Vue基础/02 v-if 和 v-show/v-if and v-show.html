@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app-3">
+        <!--v-if 和 v-show 的区别 
+            v-if 和 v-show 都可以控制元素是否渲染
+            
+            v-if 若为 true，则向dom树插入子节点，否则不插入
+            v-show 不论其值，都向dom树插入，然后根据值来判断是否进行渲染
+
+            频繁遇到这种情况，v-if频繁修改dom树会造成较多的性能开销
+            而 v-show 只在最初创建时产生额外开销
+        -->
+        <p v-if="seen">现在你看到我了</p>
+        <p v-show="ifShow">
+            显示
+            <!-- {{ ifShow }} ，
+                如果script控制ifShow:undefined，
+                那么这里会出错-->
+        </p>
+        <!-- 
+            注意，若此处的ifShow未定义（undefined）
+            而后面使用了ifShow控制文本，那么会产生错误，
+            这是需要注意的 
+        -->
+        
+    </div>
+    <script>
+        var app3= new Vue({
+            el:'#app-3',
+            data:{
+                seen:true,
+                ifShow:false
+            }
+        })
+    </script>
+</body>
+</html>
