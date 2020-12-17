@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    
+    <!-- 
+        在js中可以设置一个数组的长度,
+        若比原来长则自动用空元素填充数组
+        若比原来段则截断多余元素
+        但这个方法不能用于处理data对象中的数组,因为vue无法检测到该操作对数组的任何更改 
+        但可以使用splice()方法代替-->
+
+    <div id="app">
+        <p>
+            {{ dogs }}
+        </p>
+    </div>
+
+    <script>
+
+        const vm1 =new Vue({
+            el:'#app',
+            data:{
+                dogs:['rex','rover','henrietta','alan']
+            }
+        });
+
+        vm1.dogs.splice(5)// 未填充
+        vm1.dogs.splice(2)// 被截断
+        // 此方法只能用于缩短数组而无法延长
+
+    </script>
+
+</body>
+</html>

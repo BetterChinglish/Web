@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <p>
+            {{ formData }}
+        </p>
+
+    </div>
+
+    <!-- 响应式存在的一些限制 -->
+
+    <!-- 1
+        为对象添加新的属性
+    -->
+    <script>
+        const vm1 = new Vue({
+            el:'#app',
+            data:{
+                formData:{
+                    username:'someuser'
+                }
+            }
+        }) 
+        vm1.formData.name = 'some user'; // 并没有显示name:'some user'
+        // formData.username 是响应式的，但 formData.name 并非如此
+
+        // 解决办法：
+        // 1、在初始化对象的时候定义这个属性并将其设置为undefined
+        // formData:{
+        //     username:'someuser',
+        //     name:undefined
+        // } 
+
+        // 2、使用 Object.assign()创建一个新的对象然后覆盖原有对象(一次性更新多个属性的时候这是最有效的方法)
+        // vm1.formData = Object.assign({}, vm1.formData, {
+        //     username:'someuser',
+        //     name:'some user'
+        // })
+
+        // 3、使用Vue的 Vue.set()方法，可以使用此方法将属性设置为响应式的
+        // Vue.set(vm1.formData,'name','some user');
+
+            
+    </script>
+
+
+
+
+
+
+</body>
+</html>

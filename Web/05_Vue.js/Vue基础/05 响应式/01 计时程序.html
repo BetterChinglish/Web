@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+
+</head>
+<body>
+    <div id="app1">
+
+        <!-- 使用插值将数据输出到页面上 -->
+        <p>
+            从你打开这个界面已经过了：{{ seconds }} 秒
+        </p>
+        <button v-bind:disabled='buttonDisabled'>
+            test button
+        </button>
+
+
+
+    </div>
+    <script>
+        var app =new Vue({
+            el:'#app1',
+            data:{
+                seconds:0,
+                buttonDisabled:true
+            },
+            created() {
+                setInterval(() => {
+                    this.seconds++;
+                    this.buttonDisabled=!this.buttonDisabled
+                }, 1000)
+            // created函数会在应用初始化完成后执行
+            },
+        })
+
+
+    </script>
+
+</body>
+</html>

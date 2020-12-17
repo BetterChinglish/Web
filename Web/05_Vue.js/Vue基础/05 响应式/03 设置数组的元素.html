@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <!-- 不能直接使用索引来设置数组的元素 -->
+
+    <div id="app">
+        <p>
+            {{ dogs }}
+        </p>
+    </div>
+
+    <script>
+        
+
+        const vm1 =new Vue({
+            el:'#app',
+            data:{
+                dogs:['rex','rover','henrietta','alan']
+            }
+        });
+
+        vm1.dogs[2] = 'bob'; // 发现网页上第三个dogs的元素没有改变为 bob
+
+        // 解决方法：
+        // 1、使用 .splice() 方法一处旧元素并添加新元素：
+        // vm1.dogs.splice(2,1,'bob')
+        // splice(index(必须，开始位置，指向头部，如为2，则指向1末2始处，为负数则从末尾开始,如-1,则指向倒数第一个和倒数第二个开始)，howmany(必须，删除数目，0的话不删除)，item1，item2...(可选，添加项目))
+        vm1.dogs.splice(-1,0,'bob')
+        // 2、使用 Vue.set():
+        // Vue.set(vm1.dogs,2,'bob')
+
+
+
+    </script>
+
+
+
+</body>
+</html>
