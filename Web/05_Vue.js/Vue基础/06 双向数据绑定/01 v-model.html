@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model="inputText" value="somewords">
+        <!-- 设置了v-model后，value,checked和selected属性会被忽略 
+            这里设置了value为somewords但是并没有显示出来-->
+
+
+        
+        <p>
+            {{ inputText }}
+        </p>
+
+    </div>
+
+
+    <script >
+        var vm1 = new Vue({
+            el:'#app',
+            data:{
+                inputText:"enter"
+            }
+        })
+    </script>
+</body>
+</html>

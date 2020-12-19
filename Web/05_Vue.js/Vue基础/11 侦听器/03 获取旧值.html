@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                inputValue:''
+            },
+            watch:{
+                // 自动传入两个值，一个是现在的值，另一个是旧值
+                inputValue(value,oldValue) {
+                    console.log(value,oldValue);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <p>
+            所有正数的总和是： {{ Sum() }}
+        </p>
+
+
+    </div>
+
+    <script>
+        var vm1 = new Vue({
+            el:'#app',
+            data:{
+                numbers:[-9,-2,34,1,24,-3]
+            },
+            methods:{
+                getNumber() {
+                    return this.numbers.filter((number)=>number>0);
+                },
+                Sum() {
+                    return this.getNumber().reduce((sum, val)=> sum+val);
+                }
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>

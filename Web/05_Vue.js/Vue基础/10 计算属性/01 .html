@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <!-- 计算属性介于对象的属性和方法两者之间
+        可以像访问打他对象的属性那样访问它
+        但是需要以函数的方式定义它 -->
+
+    <div id="app">
+        
+        <p> {{ numberTotal }} </p>
+        <p> {{ numberTotal }} </p>
+        <p> {{ numberTotal }} </p>
+        <p> {{ numberTotal }} </p>
+        <p> {{ numberTotal }} </p>
+
+    </div>
+
+    <script>
+        var vm1 = new Vue({
+            el:'#app',
+            data:{
+                numbers:[2,5,9]
+            },
+            computed:{
+                numberTotal() {
+                    console.log("changed!"); //添加这句话后，反复输出numberTotal()，在控制台观察是否输出changed！语句
+                    sum = this.numbers.reduce((sum, val) => sum + val);
+                    return sum;
+                    
+                }
+            
+            }
+        })
+
+        // 也可以将计算综合的语句整个写在模板中，但单独将其定义更加方便、可读
+        // 和方法一样，当numbers发生变化时，numberTotal也会同时发生变化
+
+        // 两个方式的区别：
+        // 1、计算属性会被缓存
+
+        // 如果在模板中多次调用一个方法，方法中的代码在每一次调用时都会执行一遍
+
+        // 如果计算属性被多次调用，其中的代码只会执行一次，之后的调用都会使用被缓存的值，只有当计算书信的依赖发生变化时，代码才会被再次执行
+
+        // 在上面这个例子中，
+        // 如果向numbers中添加一项，
+        // numberTotal中的代码会再次执行以获取新的计算值。
+        // 因为这种方式可以确保代码只在必要的时刻执行，
+        // 所以适合处理一些潜在的资源密集型工作。
+
+
+        
+
+    </script>
+</body>
+</html>

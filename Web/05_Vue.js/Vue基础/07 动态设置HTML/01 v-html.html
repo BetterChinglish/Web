@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <div v-html="myHtml"></div>
+
+
+
+    </div>
+    <script>
+
+        var vm1 = new Vue({
+            el:'#app',
+            data:{
+                myHtml:
+                '<div style="width:100px;\
+                height:100px;\
+                background-color:red">\
+                some words</div>'
+                // 不要让用户输入或者允许用户修改的内容放置于v-html中，
+                // 可能将自己暴露在XSS风险中，
+                // 只用v-html处理自己新人的数据
+            }
+        })
+    </script>
+
+</body>
+</html>

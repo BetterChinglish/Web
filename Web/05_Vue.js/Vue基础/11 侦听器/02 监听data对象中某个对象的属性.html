@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <p>请输入用户名</p>
+        <input type="text" v-model="formData.username">
+        <p>用户名是： {{ formData.username}} </p>
+        <p>用户名是否更改过： {{ formData.changed }} </p>
+    </div>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                formData:{
+                    username:'',
+                    changed:''
+                },
+            },
+            watch: {
+                // 监听formData对象中的username属性
+                'formData.username'() {
+                    // write something here   
+                    setTimeout(()=>{
+                        this.formData.changed = 'true'
+                    },3000)
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

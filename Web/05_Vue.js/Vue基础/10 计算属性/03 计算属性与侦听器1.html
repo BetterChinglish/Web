@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>
+            {{ fullName }}
+        </p>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+
+            el:'#app',
+            data:{
+                fullName:'hello vue',
+                firstName:'hello',
+                lastName:'vue'
+            },
+            watch:{
+                firstName:function(val){
+                    this.fullName = val + ' ' + this.lastName
+                },
+                lastName:function(val) {
+                    this.fullName = this.firstName + ' ' + val
+                }
+
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>

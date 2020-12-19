@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <p>5s后显示输入的值为： {{ oldValue}} </p>
+
+    </div>
+
+
+    <script>
+        var vm1 = new Vue({
+            el:'#app',
+            data:{
+                inputValue:'',
+                oldValue:''
+            },
+            watch:{
+                inputValue() {
+                    const newValue = this.inputValue;
+                    setTimeout(()=>{
+                        this.oldValue = newValue;
+                    },5000)
+                }
+            }
+            
+        })
+
+
+    </script>
+</body>
+</html>
