@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../../vue.js"></script>
+
+    <style>
+        
+        .errorClass{
+            width: 200px;
+            height: 100px;
+            background-color: slategrey;
+        }
+        .activeClass {
+            width: 100px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    
+    </style>
+
+</head>
+
+
+
+<body>
+    <div id="app">
+
+        <div v-bind:class="[isActive ? activeClass : ' ' ,errorClass]"></div>
+
+    </div>
+
+    <script>
+
+        var vm = new Vue({
+
+            el : '#app',
+            data:{
+                isActive:0,
+                activeClass:'activeClass',
+                errorClass:'errorClass'
+            }
+
+
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+    
+</head>
+<body>
+    <!-- 传给 v-bind:class 一个对象 -->
+    <div id="app">
+
+        <div v-bind:class="{active:isActive, 'text-danger':'hasError'}"></div>
+        <div v-bind:class="classObject"></div>
+        <div v-bind:class='classObject2'></div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+
+            el:'#app',
+            data:{
+                // 1
+                isActive:true,
+                hasError:false,
+                // 渲染为： <div class="static active"> </div>
+
+                // 2 
+                classObject:{
+                    active:true,
+                    'text-danger':false
+                },
+                // 同 1 的渲染效果,而且更方便
+
+                // 3
+                // 设置计算属性
+                isActive2:true,
+                error2:null // null 在布尔运算中视作 false
+            },
+            computed:{
+                classObject2: function() {
+                    return {
+                        active:this.isActive2 && !this.error2,
+                        'text-danger':this.error2 && this.error2.type=='fatal'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
