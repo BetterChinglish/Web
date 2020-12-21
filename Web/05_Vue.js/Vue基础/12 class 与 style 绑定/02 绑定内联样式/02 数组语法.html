@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+
+        <div v-bind:style=" [wordStyle,bgc] "> {{ msg }} </div>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+
+            el:'#app',
+            data:{
+                msg:'使用数组语法可以将多个样式对象应用到同一个元素上',
+                wordStyle:{
+                    fontSize:'25px',
+                    fontWeight:'bold',
+                    color:'red'
+
+                },
+                bgc:{
+                    width:'800px',
+                    height:'300px',
+                    backgroundColor:'skyblue'
+                }
+
+
+            }
+
+
+        })
+
+
+
+    </script>
+
+</body>
+</html>

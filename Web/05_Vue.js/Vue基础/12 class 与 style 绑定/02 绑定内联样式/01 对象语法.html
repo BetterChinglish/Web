@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:style=" { color : activeColor , fontSize : size + 'px' } ">
+             {{ msg1 }} </div>
+
+        <div v-bind:style = styleObject> {{ msg2 }} </div>
+
+        <div v-bind:style="styleObject2"> {{ msg3 }} </div>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+
+            el:'#app',
+            data:{
+                msg1:'引号括起，注意属性的值为字符串',
+                size:30,
+                activeColor:'red',
+
+                msg2:'直接绑定到对象',
+                styleObject:{
+                    color:'skyblue',
+                    fontSize:'13px'
+                },
+
+                msg3:'结合返回对象的计算属性使用'
+            },
+            computed:{
+                styleObject2:function() {
+                    return {
+                        color:'gray',
+                        fontSize:'24px'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
