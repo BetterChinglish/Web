@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <ul id="app">
+        <li v-for="value in myObj">
+            {{ value }}
+        </li>
+    </ul>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    myObj:{
+                        title:'how to do lists in vue',
+                        author:'jan doe',
+                        publishedAt:'2016-04-10'
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
